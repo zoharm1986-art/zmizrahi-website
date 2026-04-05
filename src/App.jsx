@@ -38,7 +38,7 @@ const GuidesSection = () => {
               <h3 className="text-xl font-bold text-white mb-2 group-hover:text-bloomberg-accent transition-colors">{g.title}</h3>
               <p className="text-bloomberg-muted text-sm mb-4">{g.desc}</p>
               <a 
-                href="https://wa.me/972536009599?text=היי זוהר, קראתי את המדריך על " + g.title + " ואשמח לקבל עוד פרטים"
+                href={`https://wa.me/972536009599?text=היי זוהר, קראתי את המדריך על ${g.title} ואשמח לקבל עוד פרטים`}
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-bloomberg-neon text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all"
