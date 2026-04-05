@@ -35,7 +35,7 @@ const BlogIndex = () => {
       <div className="max-w-5xl mx-auto">
         <div className="mb-16 text-center">
           <h1 className="text-4xl md:text-6xl font-black text-white mb-4">הבלוג <span className="text-bloomberg-accent">הפיננסי</span></h1>
-          <p className="text-bloomberg-muted text-xl">ידע מקצועי, נטול פניות, ששווה כסף.</p>
+          <p className="text-bloomberg-muted text-xl">ידע פיננסי ששובר שוק. בלי ספינים, רק תוצאות.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
