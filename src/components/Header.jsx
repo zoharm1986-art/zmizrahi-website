@@ -99,7 +99,7 @@ const Header = ({ boiData }) => {
         {isOpen && (
           <div className="md:hidden absolute top-full left-0 right-0 bg-bloomberg-black border-b border-white/10 p-6 flex flex-col gap-4 animate-fade-in">
             {navLinks.map((link) => (
-              <a key={link.name} href={link.href} onClick={() => setIsOpen(false)} className="text-lg font-bold text-white py-2 border-b border-white/5">
+              <a key={link.name} href={link.href} onClick={(e) => { if(link.href === '#') { e.preventDefault(); window.location.href = '/'; } setIsOpen(false); }} className="text-lg font-bold text-white py-2 border-b border-white/5">
                 {link.name}
               </a>
             ))}
