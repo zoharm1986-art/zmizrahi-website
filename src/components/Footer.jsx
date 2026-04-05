@@ -17,6 +17,7 @@ const Footer = () => {
             ייעוץ משכנתאות אסטרטגי וטכנולוגי. אנחנו לא סוכנים, אנחנו הארכיטקטים הפיננסים שלך.
           </p>
           <div className="flex gap-4">
+            {/* Facebook Link - Verified 2026 */}
             <a 
               href="https://www.facebook.com/zohar.mizrahi" 
               target="_blank" 
