@@ -81,17 +81,34 @@ function App() {
           <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-bloomberg-accent/10 rounded-full blur-[120px]"></div>
           
-          <div className="max-w-5xl mx-auto text-center relative z-10">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-[0.9]">
-              המשכנתא שלך. <br />
-              <span className="text-gradient">בגרסה הבאה.</span>
-            </h1>
-            <p className="text-bloomberg-muted text-xl md:text-2xl font-medium mb-12 max-w-2xl mx-auto leading-relaxed">
-              אל תסתפק בריבית של הבנק. קבל תמהיל שובר שוק עם טכנולוגיה מתקדמת.
-            </p>
-            <div className="flex justify-center gap-4 mb-16">
-              <a href="https://wa.me/972536009599" target="_blank" rel="noopener noreferrer" className="btn-primary px-8 py-4 text-lg">ייעוץ חינם 💬</a>
-              <a href="#guides" className="px-8 py-4 border border-white/20 rounded-full hover:bg-white/5 transition-colors font-bold text-lg">למדריך המלא</a>
+          <div className="max-w-6xl mx-auto text-center relative z-10 flex flex-col md:flex-row items-center gap-12">
+            <div className="flex-1">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-[0.9] text-right md:text-left">
+                המשכנתא שלך. <br />
+                <span className="text-gradient">בגרסה הבאה.</span>
+              </h1>
+              <p className="text-bloomberg-muted text-xl md:text-2xl font-medium mb-12 max-w-2xl mx-auto leading-relaxed text-right md:text-left">
+                אל תסתפק בריבית של הבנק. קבל תמהיל שובר שוק עם טכנולוגיה מתקדמת.
+              </p>
+              <div className="flex justify-center md:justify-start gap-4 mb-16">
+                <a href="https://wa.me/972536009599" target="_blank" rel="noopener noreferrer" className="btn-primary px-8 py-4 text-lg">ייעוץ חינם 💬</a>
+                <a href="#guides" className="px-8 py-4 border border-white/20 rounded-full hover:bg-white/5 transition-colors font-bold text-lg">למדריך המלא</a>
+              </div>
+            </div>
+            
+            {/* Zohar's Hero Image */}
+            <div className="flex-1 relative">
+              <div className="relative w-64 h-64 md:w-96 md:h-96 mx-auto">
+                <div className="absolute inset-0 bg-bloomberg-accent/20 rounded-full blur-3xl animate-pulse-slow"></div>
+                <img 
+                  src="/zohar-hero.jpg" 
+                  alt="זוהר מזרחי - יועץ משכנתאות" 
+                  className="relative w-full h-full object-cover rounded-full border-4 border-white/10 shadow-2xl shadow-bloomberg-accent/20 hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute -bottom-4 -right-4 bg-bloomberg-black border border-bloomberg-accent text-white px-4 py-2 rounded-lg font-bold text-sm shadow-lg">
+                  זוהר מזרחי 🦁
+                </div>
+              </div>
             </div>
           </div>
 
