@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Heebo:wght@300;400;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-bloomberg-black text-bloomberg-text selection:bg-bloomberg-accent/30;
+    font-family: 'Heebo', sans-serif;
+    min-height: 100dvh;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/[0.03] backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] rounded-2xl transition-all duration-300 hover:border-bloomberg-accent/30;
+  }
+  .bloomberg-ticker {
+    @apply overflow-hidden whitespace-nowrap flex gap-8;
+    direction: ltr; /* Numbers look better LTR even in RTL context for tickers */
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-bloomberg-accent to-bloomberg-neon;
+  }
+  .btn-primary {
+    @apply bg-bloomberg-accent hover:bg-amber-500 text-black font-bold py-3 px-6 rounded-full transition-all shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)];
+  }
+}

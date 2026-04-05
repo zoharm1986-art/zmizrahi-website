@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /src/
+Disallow: /node_modules/
+
+User-agent: Googlebot
+Allow: /
+
+Sitemap: https://zmizrahi.co.il/sitemap.xml
+
+Host: zmizrahi.co.il
