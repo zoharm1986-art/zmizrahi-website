@@ -1,47 +1,92 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Shield, Lock, Eye, FileText } from 'lucide-react';
 
 const PrivacyPolicy = () => {
   return (
-    <div className="min-h-screen bg-bloomberg-black text-bloomberg-text py-20 px-4 md:px-8">
-      <div className="max-w-4xl mx-auto glass-card p-8 md:p-12">
-        <h1 className="text-4xl md:text-5xl font-black text-white mb-8">מדיניות פרטיות</h1>
-        
-        <div className="space-y-6 text-bloomberg-muted leading-relaxed text-lg">
-          <p>
-            ברוכים הבאים לאתר <strong className="text-white">zmizrahi.co.il</strong>. אנו רואים חשיבות עליונה בשמירה על פרטיות המבקרים באתר. 
-            מדיניות הפרטיות שלהלן נועדה ליידע אותך כיצד אנו אוספים, משתמשים ומגנים על המידע האישי שלך.
-          </p>
+    <div className="min-h-screen bg-bloomberg-black text-bloomberg-text font-sans selection:bg-bloomberg-accent/30" dir="rtl">
+      <div className="max-w-4xl mx-auto px-4 md:px-8 py-20">
+        <div className="mb-12">
+          <a href="/" className="inline-flex items-center gap-2 text-bloomberg-accent hover:text-white transition-colors mb-8">
+            <ArrowRight className="w-5 h-5" /> חזרה לדף הבית
+          </a>
+          <h1 className="text-4xl md:text-5xl font-black text-white mb-4">מדיניות פרטיות</h1>
+          <p className="text-bloomberg-muted">עודכן לאחרונה: אפריל 2026</p>
+        </div>
 
-          <h2 className="text-2xl font-bold text-white mt-8">איסוף מידע</h2>
-          <p>
-            אנו עשויים לאסוף מידע אישי שאתה מספק מרצונך בעת מילוי טפסים באתר, כגון: שם מלא, מספר טלפון, כתובת אימייל ופרטים פיננסיים בסיסיים הנדרשים לצורך ייעוץ משכנתאות.
-          </p>
+        <div className="space-y-8 text-bloomberg-muted leading-relaxed">
+          <section className="glass-card p-8">
+            <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+              <Shield className="w-6 h-6 text-bloomberg-accent" />
+              1. מבוא
+            </h2>
+            <p>
+              אנו במשרד זוהר מזרחי יועץ משכנתאות ("המשרד") מקדישים חשיבות רבה לשמירה על פרטיותך. 
+              מדיניות פרטיות זו מסבירה כיצד אנו אוספים, משתמשים, שומרים ומגינים על המידע האישי שלך 
+              כאשר אתה מבקר באתר האינטרנט שלנו או משתמש בשירותינו.
+            </p>
+          </section>
 
-          <h2 className="text-2xl font-bold text-white mt-8">שימוש במידע</h2>
-          <ul className="list-disc pr-6 space-y-2">
-            <li>מתן ייעוץ משכנתאות מקצועי ומותאם אישית.</li>
-            <li>יצירת קשר לעדכונים שוטפים לגבי משכנתאות וריביות.</li>
-            <li>שיפור חוויית המשתמש באתר.</li>
-            <li>עמידה בדרישות החוק והרגולציה הפיננסית.</li>
-          </ul>
+          <section className="glass-card p-8">
+            <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+              <Lock className="w-6 h-6 text-bloomberg-accent" />
+              2. איסוף מידע
+            </h2>
+            <p className="mb-4">אנו אוספים את הסוגים הבאים של מידע:</p>
+            <ul className="list-disc list-inside space-y-2 mr-4">
+              <li>פרטים אישיים: שם מלא, מספר טלפון, כתובת אימייל</li>
+              <li>מידע פיננסי: הכנסות, הוצאות, נתוני משכנתא קיימת או מבוקשת</li>
+              <li>מידע טכני: כתובת IP, סוג דפדפן, נתוני גלישה</li>
+            </ul>
+          </section>
 
-          <h2 className="text-2xl font-bold text-white mt-8">שיתוף מידע</h2>
-          <p>
-            אנו איננו מוכרים, משכירים או משתפים את המידע האישי שלך עם גופים חיצוניים, למעט במקרים הנדרשים על פי חוק או לצורך מתן השירות (למשל, העברת פרטים לבנקים לצורך קבלת הצעות).
-          </p>
+          <section className="glass-card p-8">
+            <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+              <Eye className="w-6 h-6 text-bloomberg-accent" />
+              3. שימוש במידע
+            </h2>
+            <p className="mb-4">המידע שנאסף משמש למטרות הבאות:</p>
+            <ul className="list-disc list-inside space-y-2 mr-4">
+              <li>מתן ייעוץ משכנתאות מקצועי ומותאם אישית</li>
+              <li>יצירת קשר לצורך תיאום פגישות ומעקב אחר בקשות</li>
+              <li>שיפור חוויית המשתמש באתר</li>
+              <li>שליחת עדכונים שיווקיים (במידה ונתת הסכמה לכך)</li>
+            </ul>
+          </section>
 
-          <h2 className="text-2xl font-bold text-white mt-8">אבטחת מידע</h2>
-          <p>
-            אנו נוקטים באמצעי אבטחה פיזיים, אלקטרוניים וניהוליים מתקדמים כדי להגן על המידע האישי שלך מפני גישה לא מורשית, שינוי או חשיפה.
-          </p>
+          <section className="glass-card p-8">
+            <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+              <FileText className="w-6 h-6 text-bloomberg-accent" />
+              4. שיתוף מידע
+            </h2>
+            <p>
+              אנו לא מוכרים, משכירים או משתפים את המידע האישי שלך עם צדדים שלישיים, 
+              למעט במקרים הבאים: כאשר נדרש על פי דין, לצורך מתן השירותים שלנו (למשל, 
+              העברת פרטים לבנקים לצורך קבלת הצעות), או כאשר נתת הסכמה מפורשת לכך.
+            </p>
+          </section>
 
-          <div className="mt-12 pt-8 border-t border-white/10 text-center">
-            <p className="text-sm text-bloomberg-muted mb-4">לשאלות בנושא פרטיות: zohar@zmizrahi.co.il</p>
-            <a href="/" className="inline-flex items-center gap-2 text-bloomberg-accent hover:text-white transition-colors font-bold">
-              <ArrowRight className="w-5 h-5" /> חזרה לאתר הראשי
-            </a>
-          </div>
+          <section className="glass-card p-8">
+            <h2 className="text-2xl font-bold text-white mb-4">5. זכויותיך</h2>
+            <p>על פי חוק הגנת הפרטיות, התשמ"א-1981, יש לך את הזכויות הבאות:</p>
+            <ul className="list-disc list-inside space-y-2 mr-4 mt-4">
+              <li>הזכות לעיין במידע המוחזק עליך</li>
+              <li>הזכות לתקן מידע שגוי</li>
+              <li>הזכות למחוק מידע (בכפוף לחריגים בחוק)</li>
+              <li>הזכות להתנגד לעיבוד מידע</li>
+            </ul>
+          </section>
+
+          <section className="glass-card p-8">
+            <h2 className="text-2xl font-bold text-white mb-4">6. יצירת קשר</h2>
+            <p>
+              לכל שאלה או בקשה בנוגע למדיניות הפרטיות, ניתן לפנות אלינו:
+            </p>
+            <div className="mt-4 p-4 bg-white/5 rounded-lg">
+              <p className="text-white font-bold">זוהר מזרחי יועץ משכנתאות</p>
+              <p>טלפון: 053-600-9599</p>
+              <p>אימייל: zohar@mizrahi.com</p>
+            </div>
+          </section>
         </div>
       </div>
     </div>

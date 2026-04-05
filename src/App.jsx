@@ -8,6 +8,7 @@ import AccessibilityWidget from './components/AccessibilityWidget';
 import AccessibilityStatement from './components/AccessibilityStatement';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfService from './components/TermsOfService';
+import { useBOIData } from './hooks/useBOIData';
 import { MessageCircle, BookOpen, ArrowRight } from 'lucide-react';
 
 const GuidesSection = () => {
@@ -36,9 +37,14 @@ const GuidesSection = () => {
               </div>
               <h3 className="text-xl font-bold text-white mb-2 group-hover:text-bloomberg-accent transition-colors">{g.title}</h3>
               <p className="text-bloomberg-muted text-sm mb-4">{g.desc}</p>
-              <span className="text-bloomberg-neon text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+              <a 
+                href="https://wa.me/972536009599?text=היי זוהר, קראתי את המדריך על " + g.title + " ואשמח לקבל עוד פרטים"
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-bloomberg-neon text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all"
+              >
                 קרא עוד <ArrowRight className="w-4 h-4" />
-              </span>
+              </a>
             </div>
           ))}
         </div>
@@ -48,6 +54,8 @@ const GuidesSection = () => {
 };
 
 function App() {
+  const boiData = useBOIData();
+  
   // Simple routing for legal pages
   const [page, setPage] = React.useState('home');
 
@@ -65,7 +73,7 @@ function App() {
   return (
     <div className="min-h-screen bg-bloomberg-black text-bloomberg-text font-sans selection:bg-bloomberg-accent/30">
       <AccessibilityWidget />
-      <Header />
+      <Header boiData={boiData} />
       
       <main id="main-content">
         {/* Hero Section */}
@@ -118,7 +126,7 @@ function App() {
         </section>
 
         <section id="market-dash">
-          <MarketDashboard />
+          <MarketDashboard boiData={boiData} />
         </section>
 
         <section id="proof" className="py-20 px-4 md:px-8">

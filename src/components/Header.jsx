@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Phone, MessageCircle } from 'lucide-react';
 
-const Header = () => {
+const Header = ({ boiData }) => {
+  const { boiRate, primeRate, usdIls, inflation, nextDecisionDate, lastUpdate } = boiData || {};
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -36,15 +37,16 @@ const Header = () => {
       {/* Bloomberg Ticker Bar */}
       <div className="bg-[#000000] border-b border-white/10 text-xs md:text-sm py-2 overflow-hidden relative z-50">
         <div className="flex animate-marquee gap-8 text-bloomberg-muted font-mono font-bold" dir="ltr">
-          <span className="flex items-center gap-2">Bank of Israel Rate <span className="text-white">4.50%</span></span>
-          <span className="flex items-center gap-2">Prime Rate <span className="text-green-400">6.67%</span></span>
+          <span className="flex items-center gap-2">Bank of Israel Rate <span className="text-white">{boiRate ? boiRate.toFixed(2) : '4.00'}%</span></span>
+          <span className="flex items-center gap-2">Prime Rate <span className="text-green-400">{primeRate ? primeRate.toFixed(2) : '5.50'}%</span></span>
           <span className="flex items-center gap-2">Housing Index <span className="text-bloomberg-accent">+0.4%</span></span>
-          <span className="flex items-center gap-2">USD/ILS <span className="text-white">3.65₪</span></span>
+          <span className="flex items-center gap-2">USD/ILS <span className="text-white">{usdIls ? usdIls.toFixed(4) : '3.50'}₪</span></span>
           <span className="flex items-center gap-2">10Y Yield <span className="text-white">4.12%</span></span>
-          <span className="flex items-center gap-2">Inflation <span className="text-red-400">+2.1%</span></span>
+          <span className="flex items-center gap-2">Inflation <span className="text-red-400">+{inflation ? inflation.toFixed(1) : '2.0'}%</span></span>
+          <span className="flex items-center gap-2">🗓️ Next Rate Decision <span className="text-bloomberg-neon">{nextDecisionDate ? new Date(nextDecisionDate).toLocaleDateString('he-IL', {day:'numeric', month:'short'}) : '...'}</span></span>
           {/* Duplicate for seamless loop */}
-          <span className="flex items-center gap-2">Bank of Israel Rate <span className="text-white">4.50%</span></span>
-          <span className="flex items-center gap-2">Prime Rate <span className="text-green-400">6.67%</span></span>
+          <span className="flex items-center gap-2">Bank of Israel Rate <span className="text-white">{boiRate ? boiRate.toFixed(2) : '4.00'}%</span></span>
+          <span className="flex items-center gap-2">Prime Rate <span className="text-green-400">{primeRate ? primeRate.toFixed(2) : '5.50'}%</span></span>
         </div>
       </div>
 

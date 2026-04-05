@@ -2,7 +2,8 @@ import React from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar } from 'recharts';
 import { TrendingUp, TrendingDown, Activity } from 'lucide-react';
 
-const MarketDashboard = () => {
+const MarketDashboard = ({ boiData }) => {
+  const { boiRate, primeRate, usdIls, inflation, nextDecisionDate, lastUpdate } = boiData || {};
   const rateData = [
     { month: 'ינו', rate: 4.25 },
     { month: 'פבר', rate: 4.25 },
@@ -36,17 +37,23 @@ const MarketDashboard = () => {
           <p className="text-bloomberg-muted text-lg">נתונים בזמן אמת מהשוק הפיננסי</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-12">
           {[
-            { label: "ריבית בנק ישראל", value: "4.50%", trend: "flat" },
-            { label: "ריבית פריים", value: "6.67%", trend: "up" },
+            { label: "ריבית בנק ישראל", value: `${boiRate ? boiRate.toFixed(2) : '4.00'}%`, trend: "flat" },
+            { label: "ריבית פריים", value: `${primeRate ? primeRate.toFixed(2) : '5.50'}%`, trend: primeRate > 5.5 ? "up" : "flat" },
             { label: "מדד תשומות בנייה", value: "+2.1%", trend: "up" },
             { label: "תשואה ל-10 שנים", value: "4.12%", trend: "down" },
+            { 
+              label: "החלטת ריבית הבאה", 
+              value: nextDecisionDate ? new Date(nextDecisionDate).toLocaleDateString('he-IL', {day:'numeric', month:'long'}) : '...', 
+              trend: "flat",
+              isDate: true
+            },
           ].map((item, i) => (
             <div key={i} className="glass-card p-6 border-l-4 border-l-bloomberg-accent">
               <p className="text-bloomberg-muted text-xs font-bold uppercase tracking-wider mb-2">{item.label}</p>
               <div className="flex items-center justify-between">
-                <span className="text-3xl font-black mono-numbers text-white">{item.value}</span>
+                <span className={`text-xl md:text-2xl font-black mono-numbers ${item.isDate ? 'text-bloomberg-neon' : 'text-white'}`}>{item.value}</span>
                 {item.trend === 'up' && <TrendingUp className="w-6 h-6 text-red-500" />}
                 {item.trend === 'down' && <TrendingDown className="w-6 h-6 text-green-500" />}
                 {item.trend === 'flat' && <Activity className="w-6 h-6 text-bloomberg-neon" />}
@@ -54,6 +61,17 @@ const MarketDashboard = () => {
             </div>
           ))}
         </div>
+        
+        <div className="text-center mt-8">
+          <a href="https://wa.me/972536009599?text=היי זוהר, ראיתי את דופק השוק ואשמח לבדיקת זכאות"
+             className="inline-flex items-center gap-2 px-6 py-3 bg-bloomberg-neon text-black font-bold rounded-lg hover:bg-bloomberg-neon/80 transition">
+            💬 בוא נדבר על הריבית שלך
+          </a>
+        </div>
+
+        <p className="text-xs text-bloomberg-muted text-center mb-8">
+          📡 נתונים חיים מבנק ישראל | עדכון אחרון: {lastUpdate ? new Date(lastUpdate).toLocaleString('he-IL') : 'טוען...'}
+        </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Interest Rate History */}
