@@ -113,12 +113,12 @@ const AccessibilityWidget = () => {
             </button>
 
             <button onClick={() => toggleSetting('readableFont')} className={`w-full flex items-center justify-between p-3 rounded-lg border-2 transition-all ${settings.readableFont ? 'bg-black text-white border-black' : 'border-gray-200 hover:border-black'}`}>
-              <span className="font-bold flex items-center gap-2"><Type className="w-4 h-4" /> פונט קריא</span>
+              <span className="font-bold flex items-center gap-2"><Type className="w-4 h-4" /> גופן קריא</span>
               <div className={`w-4 h-4 rounded-full ${settings.readableFont ? 'bg-green-400' : 'bg-gray-300'}`}></div>
             </button>
 
             <button onClick={() => toggleSetting('underlineLinks')} className={`w-full flex items-center justify-between p-3 rounded-lg border-2 transition-all ${settings.underlineLinks ? 'bg-black text-white border-black' : 'border-gray-200 hover:border-black'}`}>
-              <span className="font-bold flex items-center gap-2">קו תחתון לקישורים</span>
+              <span className="font-bold flex items-center gap-2">קו תחתון בקישורים</span>
               <div className={`w-4 h-4 rounded-full ${settings.underlineLinks ? 'bg-green-400' : 'bg-gray-300'}`}></div>
             </button>
 
@@ -131,10 +131,10 @@ const AccessibilityWidget = () => {
           <div className="mt-6 text-center border-t border-gray-200 pt-4">
             <p className="text-xs font-bold text-gray-800 mb-2">הצהרת נגישות</p>
             <p className="text-[10px] text-gray-500 leading-tight">
-              האתר עומד בתקן ישראלי ת"י 5568 רמה AA.<br/>
-              למידע נוסף קראו את <button className="text-blue-600 underline font-bold">הצהרת הנגישות המלאה</button>.
+              האתר עומד בתקן הישראלי 5568 רמה AA.<br/>
+              לפרטים נוספים ניתן לקרוא את <button className="text-blue-600 underline font-bold">הצהרת הנגישות המלאה</button>.
             </p>
-            <p className="text-[10px] text-gray-400 mt-2">לדיווח על מפגעי נגישות: זוהר מזרחי | 053-600-9599</p>
+            <p className="text-[10px] text-gray-400 mt-2">לתשומת ליבכם - משרד נגישות: zohar@mizrahi.com | 053-600-9599</p>
           </div>
         </div>
       )}
