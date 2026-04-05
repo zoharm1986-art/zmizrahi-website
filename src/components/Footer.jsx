@@ -22,7 +22,7 @@ const Footer = () => {
               target="_blank" 
               rel="noopener noreferrer"
               className="p-2 rounded-full bg-white/5 text-white hover:bg-[#1877F2] transition-all" 
-              aria-label="Facebook" target="_blank" rel="noopener noreferrer"
+              aria-label="Facebook"
             >
               <Facebook className="w-5 h-5" />
             </a>
