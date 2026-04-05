@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, MessageCircle } from 'lucide-react';
+import { Menu, X, Phone, MessageCircle, Facebook } from 'lucide-react';
 
 const Header = ({ boiData }) => {
   const { boiRate, primeRate, usdIls, inflation, nextDecisionDate, lastUpdate } = boiData || {};
@@ -73,6 +73,15 @@ const Header = ({ boiData }) => {
           <div className="hidden md:flex items-center gap-4">
             <a href="tel:0536009599" className="text-white font-mono hover:text-bloomberg-accent transition-colors flex items-center gap-2">
               <Phone className="w-4 h-4" /> 053-600-9599
+            </a>
+            <a 
+              href="https://www.facebook.com/zohar.mizrahi" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="p-2.5 rounded-full bg-[#1877F2]/10 text-[#1877F2] border border-[#1877F2]/20 hover:bg-[#1877F2] hover:text-white transition-all"
+              aria-label="פייסבוק"
+            >
+              <Facebook className="w-5 h-5" />
             </a>
             <a 
               href="https://wa.me/972536009599" 
