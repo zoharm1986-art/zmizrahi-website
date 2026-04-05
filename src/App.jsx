@@ -10,6 +10,8 @@ import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfService from './components/TermsOfService';
 import BlogIndex from './components/BlogIndex';
 import Guide2026 from './components/articles/Guide2026';
+import PrimeVsFixed from './components/articles/PrimeVsFixed';
+import PurchaseTax from './components/articles/PurchaseTax';
 import { useBOIData } from './hooks/useBOIData';
 import { MessageCircle, BookOpen, ArrowRight } from 'lucide-react';
 
@@ -58,6 +60,15 @@ const GuidesSection = () => {
 function App() {
   const boiData = useBOIData();
   
+  const ArticleWrapper = ({ children }) => (
+    <>
+      <AccessibilityWidget />
+      <Header boiData={boiData} />
+      {children}
+      <Footer />
+    </>
+  );
+  
   // Simple routing for legal pages
   const [page, setPage] = React.useState('home');
 
@@ -67,7 +78,8 @@ function App() {
     else if (path === '/terms') setPage('terms');
     else if (path === '/accessibility') setPage('accessibility');
     else if (path === '/blog') setPage('blog');
-    else if (path === '/blog/guide-2026') setPage('guide-2026');
+    else if (path === '/blog/prime-vs-fixed') setPage('prime-vs-fixed');
+    else if (path === '/blog/purchase-tax') setPage('purchase-tax');
   }, []);
 
   if (page === 'privacy') return <PrivacyPolicy />;
@@ -81,14 +93,9 @@ function App() {
       <Footer />
     </>
   );
-  if (page === 'guide-2026') return (
-    <>
-      <AccessibilityWidget />
-      <Header boiData={boiData} />
-      <Guide2026 />
-      <Footer />
-    </>
-  );
+  if (page === 'guide-2026') return <ArticleWrapper><Guide2026 /></ArticleWrapper>;
+  if (page === 'prime-vs-fixed') return <ArticleWrapper><PrimeVsFixed /></ArticleWrapper>;
+  if (page === 'purchase-tax') return <ArticleWrapper><PurchaseTax /></ArticleWrapper>;
 
   return (
     <div className="min-h-screen bg-bloomberg-black text-bloomberg-text font-sans selection:bg-bloomberg-accent/30">
