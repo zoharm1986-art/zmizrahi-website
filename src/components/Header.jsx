@@ -55,7 +55,7 @@ const Header = ({ boiData }) => {
         <div className="max-w-7xl mx-auto px-4 md:px-8 h-20 flex justify-between items-center">
           
           {/* Logo */}
-          <a href="/" className="text-2xl font-black tracking-tighter text-white flex items-center gap-2" aria-label="זוהר מזרחי - דף הבית">
+          <a href="/" onClick={(e) => { e.preventDefault(); window.location.href = '/'; }} className="text-2xl font-black tracking-tighter text-white flex items-center gap-2" aria-label="זוהר מזרחי - דף הבית">
             <span className="text-bloomberg-accent text-3xl animate-pulse-slow">ZM</span>
             <span className="hidden md:inline-block text-sm font-medium text-bloomberg-muted tracking-widest uppercase border-r border-white/20 pr-2 mr-2">Zohar Mizrahi</span>
           </a>
@@ -63,7 +63,7 @@ const Header = ({ boiData }) => {
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a key={link.name} href={link.href} className="text-sm font-bold text-bloomberg-muted hover:text-white transition-colors">
+              <a key={link.name} href={link.href} onClick={(e) => { if(link.href === '#') { e.preventDefault(); window.location.href = '/'; } }} className="text-sm font-bold text-bloomberg-muted hover:text-white transition-colors">
                 {link.name}
               </a>
             ))}
