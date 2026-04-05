@@ -66,6 +66,8 @@ function App() {
     if (path === '/privacy') setPage('privacy');
     else if (path === '/terms') setPage('terms');
     else if (path === '/accessibility') setPage('accessibility');
+    else if (path === '/blog') setPage('blog');
+    else if (path === '/blog/guide-2026') setPage('guide-2026');
   }, []);
 
   if (page === 'privacy') return <PrivacyPolicy />;
@@ -110,7 +112,7 @@ function App() {
               </p>
               <div className="flex justify-center md:justify-start gap-4 mb-16">
                 <a href="https://wa.me/972536009599" target="_blank" rel="noopener noreferrer" className="btn-primary px-8 py-4 text-lg">ייעוץ חינם 💬</a>
-                <a href="#guides" className="px-8 py-4 border border-white/20 rounded-full hover:bg-white/5 transition-colors font-bold text-lg">למדריך המלא</a>
+                <a href="/blog" className="px-8 py-4 border border-white/20 rounded-full hover:bg-white/5 transition-colors font-bold text-lg">למדריך המלא</a>
               </div>
             </div>
             
