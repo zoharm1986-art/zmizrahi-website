@@ -8,6 +8,8 @@ import AccessibilityWidget from './components/AccessibilityWidget';
 import AccessibilityStatement from './components/AccessibilityStatement';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfService from './components/TermsOfService';
+import BlogIndex from './components/BlogIndex';
+import Guide2026 from './components/articles/Guide2026';
 import { useBOIData } from './hooks/useBOIData';
 import { MessageCircle, BookOpen, ArrowRight } from 'lucide-react';
 
@@ -69,6 +71,22 @@ function App() {
   if (page === 'privacy') return <PrivacyPolicy />;
   if (page === 'terms') return <TermsOfService />;
   if (page === 'accessibility') return <AccessibilityStatement />;
+  if (page === 'blog') return (
+    <>
+      <AccessibilityWidget />
+      <Header boiData={boiData} />
+      <BlogIndex />
+      <Footer />
+    </>
+  );
+  if (page === 'guide-2026') return (
+    <>
+      <AccessibilityWidget />
+      <Header boiData={boiData} />
+      <Guide2026 />
+      <Footer />
+    </>
+  );
 
   return (
     <div className="min-h-screen bg-bloomberg-black text-bloomberg-text font-sans selection:bg-bloomberg-accent/30">
