@@ -12,6 +12,9 @@ import BlogIndex from './components/BlogIndex';
 import Guide2026 from './components/articles/Guide2026';
 import PrimeVsFixed from './components/articles/PrimeVsFixed';
 import PurchaseTax from './components/articles/PurchaseTax';
+import FearIndex from './components/articles/FearIndex';
+import RecessionProof from './components/articles/RecessionProof';
+import InvestorMortgage from './components/articles/InvestorMortgage';
 import { useBOIData } from './hooks/useBOIData';
 import { MessageCircle, BookOpen, ArrowRight } from 'lucide-react';
 
@@ -78,8 +81,12 @@ function App() {
     else if (path === '/terms') setPage('terms');
     else if (path === '/accessibility') setPage('accessibility');
     else if (path === '/blog') setPage('blog');
+    else if (path === '/blog/guide-2026') setPage('guide-2026');
     else if (path === '/blog/prime-vs-fixed') setPage('prime-vs-fixed');
     else if (path === '/blog/purchase-tax') setPage('purchase-tax');
+    else if (path === '/blog/fear-index') setPage('fear-index');
+    else if (path === '/blog/recession-proof') setPage('recession-proof');
+    else if (path === '/blog/investor-mortgage') setPage('investor-mortgage');
   }, []);
 
   if (page === 'privacy') return <PrivacyPolicy />;
@@ -96,6 +103,9 @@ function App() {
   if (page === 'guide-2026') return <ArticleWrapper><Guide2026 /></ArticleWrapper>;
   if (page === 'prime-vs-fixed') return <ArticleWrapper><PrimeVsFixed /></ArticleWrapper>;
   if (page === 'purchase-tax') return <ArticleWrapper><PurchaseTax /></ArticleWrapper>;
+  if (page === 'fear-index') return <ArticleWrapper><FearIndex /></ArticleWrapper>;
+  if (page === 'recession-proof') return <ArticleWrapper><RecessionProof /></ArticleWrapper>;
+  if (page === 'investor-mortgage') return <ArticleWrapper><InvestorMortgage /></ArticleWrapper>;
 
   return (
     <div className="min-h-screen bg-bloomberg-black text-bloomberg-text font-sans selection:bg-bloomberg-accent/30">
